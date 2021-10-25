@@ -2,9 +2,9 @@
 @section('content') 
     <div class="container">
         <div class="row justify-content-center"> 
-            <div class="col-md-8"> 
+            <div class="col-md-8.5"> 
                 <div class="card"> 
-                    <div class="card-header">{{ __('STUDENT DATA') }}</div> 
+                    <div class="card-header">{{ __('USER DATA') }}</div> 
 
                     <div class="card-body"> 
                         @if (session('status')) 
@@ -19,29 +19,29 @@
                                 <button type="submit" class="btn btn-primary mb-1">Search</button>
                             </div>
                         </form>
-                        
-                        <a href="/students/create" class="btn btn-primary">Add Data</a> <br><br>
+
+                        <a href="/users/create" class="btn btn-primary">Add Data</a> <br><br>
                         <table class="table table-responsive table-striped">
                             <thead> 
                                 <tr> 
-                                    <th>NIM</th> 
+                                    <th>ID</th> 
                                     <th>Name</th> 
-                                    <th>Class</th> 
-                                    <th>Department</th> 
+                                    <th>Username</th> 
+                                    <th>Email</th> 
                                     <th>Action</th> 
                                 </tr> 
                             </thead> 
                             <tbody> 
-                                @foreach($student as $s) 
+                                @foreach($user as $s) 
                                 <tr> 
-                                    <td>{{ $s->nim }}</td> 
+                                    <td>{{ $s->id }}</td> 
                                     <td>{{ $s->name }}</td> 
-                                    <td>{{ $s->class }}</td> 
-                                    <td>{{ $s->department }}</td> 
+                                    <td>{{ $s->username }}</td> 
+                                    <td>{{ $s->email }}</td> 
                                     <td>
-                                        <form action="/students/{{$s->id}}" method="post">
-                                            <a href="/students/{{$s->id}}/edit" class="btn btn-warning">Edit</a>
-                                            <a href="/students/{{$s->id}}" class="btn btn-info">View</a>
+                                        <form action="/users/{{$s->id}}" method="post">
+                                            <a href="/users/{{$s->id}}/edit" class="btn btn-warning">Edit</a>
+                                            <a href="/users/{{$s->id}}" class="btn btn-info">View</a>
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" name="delete" class="btn btn-danger">Delete</button>
