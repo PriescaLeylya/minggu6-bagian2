@@ -27,7 +27,6 @@
                                     <th>NIM</th> 
                                     <th>Name</th> 
                                     <th>Class</th> 
-                                    <th>Department</th> 
                                     <th>Action</th> 
                                 </tr> 
                             </thead> 
@@ -36,8 +35,7 @@
                                 <tr> 
                                     <td>{{ $s->nim }}</td> 
                                     <td>{{ $s->name }}</td> 
-                                    <td>{{ $s->class }}</td> 
-                                    <td>{{ $s->department }}</td> 
+                                    <td>{{ $s->kelas->class_name }}</td>
                                     <td>
                                         <form action="/students/{{$s->id}}" method="post">
                                             <a href="/students/{{$s->id}}/edit" class="btn btn-warning">Edit</a>
