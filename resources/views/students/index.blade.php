@@ -43,6 +43,7 @@
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" name="delete" class="btn btn-danger">Delete</button>
+                                            <a href="/students/{{$s->id}}/detail" class="btn btn-success">Nilai</a>
                                         </form>
                                     </td> 
                                 </tr> 

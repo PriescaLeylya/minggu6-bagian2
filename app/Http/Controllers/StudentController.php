@@ -118,4 +118,10 @@ class StudentController extends Controller
         $user = User::where('name', 'like', "%" . $keyword . "%")->paginate(5);
         return view('users.index', compact('user'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
+
+    public function detail($id)
+    {
+        $student = Student::find($id);
+        return view('students.detail',['student'=>$student]);
+    }
 }
